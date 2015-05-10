@@ -27,6 +27,7 @@ public class MainActivity extends ActionBarActivity{
         setSupportActionBar(toolbar);
         GridView gridView = (GridView)findViewById(R.id.gridview);
         ArrayList<HashMap<String,Object>>IstImageItem = new ArrayList<HashMap<String,Object>>();
+
         HashMap<String,Object> map1 =new HashMap<String,Object>();
         map1.put("ItemImage",R.mipmap.part1);
         map1.put("ItemText", "校内新闻");
