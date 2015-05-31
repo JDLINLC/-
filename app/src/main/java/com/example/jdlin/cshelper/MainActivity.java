@@ -1,12 +1,16 @@
 package com.example.jdlin.cshelper;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.internal.widget.AdapterViewCompat;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.SimpleAdapter;
 
@@ -22,10 +26,17 @@ public class MainActivity extends ActionBarActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         toolbar= (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setLogo(R.drawable.menu1);
-        toolbar.setTitle(R.string.title);
         setSupportActionBar(toolbar);
         GridView gridView = (GridView)findViewById(R.id.gridview);
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                if(position==0) {
+                    Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                    startActivity(intent);
+                }
+            } 
+        });
         ArrayList<HashMap<String,Object>>IstImageItem = new ArrayList<HashMap<String,Object>>();
 
         HashMap<String,Object> map1 =new HashMap<String,Object>();
@@ -42,15 +53,15 @@ public class MainActivity extends ActionBarActivity{
         IstImageItem.add(map3);
         HashMap<String,Object> map4 =new HashMap<String,Object>();
         map4.put("ItemImage", R.mipmap.part4);
-        map4.put("ItemText", "吐槽水贴");
+        map4.put("ItemText", "扫码签到");
         IstImageItem.add(map4);
         HashMap<String,Object> map5 =new HashMap<String,Object>();
         map5.put("ItemImage", R.mipmap.part5);
-        map5.put("ItemText","吐槽水贴");
+        map5.put("ItemText", "吐槽水贴");
         IstImageItem.add(map5);
         HashMap<String,Object> map6 =new HashMap<String,Object>();
         map6.put("ItemImage",R.mipmap.part6);
-        map6.put("ItemText", "吐槽水贴");
+        map6.put("ItemText", "更多反馈");
         IstImageItem.add(map6);
 
         SimpleAdapter saImageItems = new SimpleAdapter(this,IstImageItem,R.layout.item,new String[]{"ItemImage","ItemText"},new int[]{R.id.ItemImage,R.id.ItemText});
