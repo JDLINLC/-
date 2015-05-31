@@ -3,24 +3,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <include layout="@layout/top_bar_news"
-        android:id="@+id/include"></include>
-    <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="?colorPrimary"
+        android:minHeight="?actionBarSize">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="?colorPrimary"
+            android:gravity="center_vertical"
+            android:paddingLeft="25dp"
+            android:text="校内新闻"
+            android:textColor="#ffff"
+            android:textSize="25dp" />
+    </android.support.v7.widget.Toolbar>
+
+    <GridView
+        android:id="@+id/gridview_news"
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
-        android:id="@+id/gridview_news"
-        android:paddingTop="5dp"
+        android:layout_below="@+id/toolbar"
+        android:columnWidth="150dp"
+        android:gravity="center"
+        android:horizontalSpacing="10dp"
+        android:minWidth="150dp"
+        android:numColumns="1"
+        android:paddingBottom="5dp"
         android:paddingLeft="8dp"
         android:paddingRight="8dp"
-        android:paddingBottom="5dp"
-        android:numColumns="1"
-        android:verticalSpacing="10dp"
-        android:horizontalSpacing="10dp"
-        android:columnWidth="150dp"
-        android:minWidth="150dp"
+        android:paddingTop="5dp"
         android:stretchMode="columnWidth"
-        android:gravity="center"
-        android:layout_below="@+id/include" />
+        android:verticalSpacing="10dp" />
 
 
 </RelativeLayout>

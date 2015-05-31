@@ -1,18 +1,13 @@
 package com.example.jdlin.cshelper;
 
 import android.content.Intent;
-import android.opengl.GLES31;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.internal.widget.AdapterViewCompat;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.GridView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
@@ -72,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         map6.put("ItemText", "更多反馈");
         IstImageItem.add(map6);
 
-        SimpleAdapter saImageItems = new SimpleAdapter(this, IstImageItem, R.layout.item, new String[]{"ItemImage", "ItemText"}, new int[]{R.id.ItemImage, R.id.ItemText});
+        SimpleAdapter saImageItems = new SimpleAdapter(this, IstImageItem, R.layout.item_main, new String[]{"ItemImage", "ItemText"}, new int[]{R.id.ItemImage, R.id.ItemText});
         gridView.setAdapter(saImageItems);
     }
 
