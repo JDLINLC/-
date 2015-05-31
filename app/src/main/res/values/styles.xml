@@ -1,14 +1,9 @@
 <resources>
 
     <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimaryDark">#ff001747</item>
         <item name="colorPrimary">#001f60</item>
-        <item name="colorPrimaryDark">#ffff</item>
-        <item name="android:actionMenuTextColor">@android:color/white</item>
-        <item name="android:textColorPrimary">#ffff</item>
-        <item name="android:textSize">18dp</item>
-        <item name="android:textColor">@android:color/black</item>
-        <item name="android:windowBackground">@android:color/white</item>
-        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/background_light</item>
     </style>
 
 </resources>
