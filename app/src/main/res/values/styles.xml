@@ -3,7 +3,7 @@
     <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="colorPrimaryDark">#ff001747</item>
         <item name="colorPrimary">#001f60</item>
-        <item name="android:windowBackground">@android:color/background_light</item>
+        <item name="android:windowBackground">@color/windowsBackground</item>
     </style>
 
 </resources>
