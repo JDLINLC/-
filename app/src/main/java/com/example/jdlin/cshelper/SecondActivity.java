@@ -1,13 +1,17 @@
 package com.example.jdlin.cshelper;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -147,7 +151,17 @@ public class SecondActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        GridView gridView_news = (GridView) findViewById(R.id.gridview_news);
+        final GridView gridView_news = (GridView) findViewById(R.id.gridview_news);
+        gridView_news.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                for (int i = 0; i < title.length; i++) {
+                    if (position == i) {
+                        ThirdActivity.actionStart(SecondActivity.this, title[i], content[i], time[i]);
+                    }
+                }
+            }
+        });
         List<Map<String, Object>> listItems = new ArrayList<>();
         for (int i = 0; i < title.length; i++) {
             Map<String, Object> listItem = new HashMap<>();
