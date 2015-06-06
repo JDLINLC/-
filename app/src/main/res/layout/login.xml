@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="1">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/top_bar" />
+
+    <TableRow
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="Account:"
+            android:textColor="@color/material_blue_grey_800" />
+
+        <EditText
+            android:id="@+id/account"
+            android:layout_height="wrap_content"
+            android:hint="Input your account"
+            android:textColorHint="@color/material_blue_grey_800"
+            android:textColor="@color/material_blue_grey_800"/>
+
+    </TableRow>
+
+    <TableRow
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="Password:"
+            android:textColor="@color/material_blue_grey_800" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textColor="@color/material_blue_grey_800" />
+
+    </TableRow>
+
+    <TableRow
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+
+        <CheckBox
+            android:id="@+id/remember_pass"
+            android:layout_height="wrap_content"
+            android:textColor="@color/material_blue_grey_800"
+            android:checked="false"
+            android:clickable="false"
+            android:longClickable="false" />
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="Remember password"
+            android:textColor="@color/material_blue_grey_800" />
+    </TableRow>
+
+    <TableRow
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+
+        <Button
+            android:id="@+id/login"
+            android:layout_height="wrap_content"
+            android:layout_span="2"
+            android:text="Login"
+            android:textColor="@color/material_blue_grey_800" />
+    </TableRow>
+
+</TableLayout>
